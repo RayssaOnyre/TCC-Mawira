@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mawira - Cuidados Capilares Personalizados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html" id="logoMawira">Mawira</a></h1>
+            <nav class="nav">
+                <button class="hamburger-menu" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                    <li id="authLinkContainer"></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img src="https://i.pinimg.com/736x/d7/6f/f3/d76ff345b1b23d6958239e3592b15e3b.jpg" alt="Mulher com cabelo crespo volumoso e sorrindo.">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.pinimg.com/736x/15/85/44/15854435a4c4b23964dc9967d6f566ec.jpg" alt="Pessoa com cabelo cacheado e saudável, focada nos detalhes dos cachos.">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.pinimg.com/736x/5f/22/1a/5f221a36d3f7dd9b917b2cf73ad2b420.jpg" alt="Pessoa com cabelo ondulado e brilhante, em um cenário natural.">
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h2>Mawira - Sua expressão de dentro para fora</h2>
+                    <p>Encontre a rotina perfeita e dicas personalizadas para o seu tipo de cabelo.</p>
+                    <a href="quizzes.html" class="btn btn-primary">Começar Agora</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us">
+            <div class="container">
+                <h2>Sobre Mawira</h2>
+                <div class="about-cards">
+                    <div class="card">
+                        <i class="fas fa-gem icon-card"></i>
+                        <h3>Nossa Essência</h3>
+                        <p>Acreditamos que o seu cabelo é uma extensão da sua identidade, uma expressão vibrante da sua essência de dentro para fora.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-lightbulb icon-card"></i>
+                        <h3>Mawira: Surpresa!</h3>
+                        <p>Nosso nome, Mawira, significa "Surpresa" em Yorubá. Nossa promessa é te surpreender com a transformação dos seus fios.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-heart icon-card"></i>
+                        <h3>Cabelo é Expressão</h3>
+                        <p>Inspirados pela liberdade e autenticidade, celebramos cada textura. Queremos que você sinta o poder do seu cabelo como uma afirmação de quem você é.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-spa icon-card"></i>
+                        <h3>Cuidados Personalizados</h3>
+                        <p>Na Mawira, você encontra guias personalizados, quizzes interativos e um blog recheado de dicas para sua rotina perfeita.</p>
+                    </div>
+                </div>
+                <p class="about-final-text">Permita-se essa descoberta, permita-se a surpresa!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mawira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Bem-vinda(o) à Mawira!</h2>
+            <p>Seu espaço dedicado a cabelos saudáveis e deslumbrantes! Descubra seu tipo de cabelo, encontre a rotina perfeita e receba dicas personalizadas com nossos quizzes interativos.</p>
+            <button class="btn btn-modal-close">Entendi!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+    <script src="auth-nav.js"></script> 
+</body>
+</html>

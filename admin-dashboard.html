@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Mawira</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-leaf"></i>
+                <h2>Mawira Admin</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="overview">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Visão Geral</span>
+                </a>
+                <a href="#" class="nav-item" data-section="posts">
+                    <i class="fas fa-blog"></i>
+                    <span>Posts do Blog</span>
+                </a>
+                <a href="#" class="nav-item" data-section="quizzes">
+                    <i class="fas fa-clipboard-question"></i>
+                    <span>Quizzes</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="header-left">
+                    <h1 id="sectionTitle">Visão Geral</h1>
+                </div>
+                <div class="header-right">
+                    <div class="admin-profile">
+                        <i class="fas fa-user-shield"></i>
+                        <span id="adminName">Administrador</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="admin-content">
+                <!-- Overview Section -->
+                <section id="overviewSection" class="content-section active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon posts">
+                                <i class="fas fa-blog"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="totalPosts">0</h3>
+                                <p>Posts Publicados</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon quizzes">
+                                <i class="fas fa-clipboard-question"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="totalQuizzes">0</h3>
+                                <p>Quizzes Criados</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon users">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="totalUsers">-</h3>
+                                <p>Usuários Ativos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <h2>Ações Rápidas</h2>
+                        <div class="actions-grid">
+                            <button class="action-card" data-action="new-post">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>Novo Post</span>
+                            </button>
+                            <button class="action-card" data-action="new-quiz">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>Novo Quiz</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Posts Section -->
+                <section id="postsSection" class="content-section">
+                    <div class="section-header">
+                        <h2>Gerenciar Posts do Blog</h2>
+                        <button class="primary-btn" id="newPostBtn">
+                            <i class="fas fa-plus"></i>
+                            Novo Post
+                        </button>
+                    </div>
+                    
+                    <div id="postsContainer" class="items-container">
+                        <!-- Posts serão carregados aqui -->
+                    </div>
+                </section>
+                
+                <!-- Quizzes Section -->
+                <section id="quizzesSection" class="content-section">
+                    <div class="section-header">
+                        <h2>Gerenciar Quizzes</h2>
+                        <button class="primary-btn" id="newQuizBtn">
+                            <i class="fas fa-plus"></i>
+                            Novo Quiz
+                        </button>
+                    </div>
+                    
+                    <div id="quizzesContainer" class="items-container">
+                        <!-- Quizzes serão carregados aqui -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modal para criar/editar Post -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="postModalTitle">Novo Post</h2>
+                <button class="close-modal" data-modal="postModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="postForm" class="admin-form">
+                <div class="form-group">
+                    <label for="postTitle">Título do Post</label>
+                    <input type="text" id="postTitle" required placeholder="Digite o título">
+                </div>
+                
+                <div class="form-group">
+                    <label for="postCategory">Categoria</label>
+                    <select id="postCategory" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="cuidados">Cuidados Capilares</option>
+                        <option value="receitas-caseiras">Receitas Caseiras</option>
+                        <option value="transicao-capilar">Transição Capilar</option>
+                        <option value="problemas-capilares">Problemas Capilares</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="postImage">URL da Imagem</label>
+                    <input type="url" id="postImage" required placeholder="https://exemplo.com/imagem.jpg">
+                </div>
+                
+                <div class="form-group">
+                    <label for="postExcerpt">Resumo</label>
+                    <textarea id="postExcerpt" rows="3" required placeholder="Breve resumo do post"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="postContent">Conteúdo Completo (HTML)</label>
+                    <textarea id="postContent" rows="10" required placeholder="<p>Conteúdo do post...</p>"></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="secondary-btn" data-modal="postModal">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="primary-btn">
+                        <i class="fas fa-save"></i>
+                        Salvar Post
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal para criar/editar Quiz -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="quizModalTitle">Novo Quiz</h2>
+                <button class="close-modal" data-modal="quizModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="quizForm" class="admin-form">
+                <div class="form-group">
+                    <label for="quizTitle">Título do Quiz</label>
+                    <input type="text" id="quizTitle" required placeholder="Ex: Qual é o seu tipo de cabelo?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="quizDescription">Descrição</label>
+                    <textarea id="quizDescription" rows="2" required placeholder="Descrição curta do quiz"></textarea>
+                </div>
+                
+                <div id="questionsContainer">
+                    <h3>Perguntas</h3>
+                    <div class="questions-list">
+                        <!-- Perguntas serão adicionadas aqui -->
+                    </div>
+                    <button type="button" class="secondary-btn" id="addQuestionBtn">
+                        <i class="fas fa-plus"></i>
+                        Adicionar Pergunta
+                    </button>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="secondary-btn" data-modal="quizModal">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="primary-btn">
+                        <i class="fas fa-save"></i>
+                        Salvar Quiz
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

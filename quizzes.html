@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mawira - Quizzes Personalizados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quizzes-style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html">Mawira</a></h1>
+            <nav class="nav">
+                <button class="hamburger-menu" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quizzes.html" class="active">Quizzes</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                    <li><a href="login.html" class="btn btn-login">Fazer Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="quizzes-page">
+        <div class="container">
+            <section id="quiz-list-section" class="quiz-section active">
+                <h2>Quizzes Mawira</h2>
+                <p>Descubra o segredo para cabelos incríveis com nossos quizzes!</p>
+                <div class="quiz-cards-grid">
+                    </div>
+            </section>
+
+            <section id="quiz-interface-section" class="quiz-section">
+                <h2 id="current-quiz-title"></h2>
+                <div class="quiz-progress-bar">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+                <p class="progress-text">Questão 0 de 0</p>
+
+                <div class="quiz-question-container">
+                    <h3 id="question-text"></h3>
+                    <div id="options-container" class="options-grid">
+                        </div>
+                </div>
+
+                <div class="quiz-navigation">
+                    <button id="back-button" class="btn btn-secondary" disabled>Voltar</button>
+                    <button id="next-button" class="btn btn-primary" disabled>Próxima Pergunta</button>
+                </div>
+            </section>
+
+            <section id="quiz-result-section" class="quiz-section">
+                <div class="result-card">
+                    <h2 id="result-title"></h2>
+                    <div id="result-content">
+                        </div>
+                    <div class="result-actions">
+                        <button class="btn btn-primary" id="view-products-button">Ver Produtos Recomendados</button>
+                        <button class="btn btn-secondary" id="share-result-button"><i class="fas fa-share-alt"></i> Compartilhar Resultado</button>
+                        <button class="btn btn-text" id="start-new-quiz-button">Fazer Outro Quiz</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mawira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="quizzes-script.js"></script> </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mawira - Meu Perfil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html" id="logoMawira">Mawira</a></h1>
+            <nav class="nav">
+                <button class="hamburger-menu" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                    <li id="authLinkContainer"></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="profile-page-wrapper">
+        <section class="profile-container">
+            <!-- Desktop layout with sidebar -->
+            <aside class="profile-sidebar">
+                <div class="profile-avatar-section">
+                    <div class="profile-avatar-container">
+                        <img id="profileAvatarImg" src="https://via.placeholder.com/140/8B4513/FFFFFF?text=MP" alt="Avatar do Usuário" class="profile-avatar">
+                        <label for="avatarUpload" class="upload-icon" title="Carregar nova foto de perfil">
+                            <i class="fas fa-camera"></i>
+                            <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+                        </label>
+                    </div>
+                    
+                    <div class="profile-user-info">
+                        <div class="profile-name-edit">
+                            <h2 id="userNameDisplay">Olá, Usuário!</h2> 
+                            <input type="text" id="userNameInput" value="Usuário" style="display:none;">
+                            <button id="editUserNameButton" class="btn-icon" title="Editar Nome">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                        <p id="userEmailDisplay" class="user-email">usuario@email.com</p>
+                        <div class="hair-type-display">
+                            <i class="fas fa-cut"></i>
+                            <span id="hairTypeDisplay">Tipo de cabelo não definido</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action buttons in sidebar -->
+                <nav class="profile-nav">
+                    <button id="viewHistoryButton" class="profile-nav-item">
+                        <i class="fas fa-history"></i>
+                        <span>Ver Histórico</span>
+                    </button>
+                    <button id="editProfileButton" class="profile-nav-item">
+                        <i class="fas fa-user-edit"></i>
+                        <span>Editar Perfil</span>
+                    </button>
+                    <button id="changePasswordButton" class="profile-nav-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Alterar Senha</span>
+                    </button>
+                    <button id="deactivateAccountButton" class="profile-nav-item danger">
+                        <i class="fas fa-user-times"></i>
+                        <span>Desativar Conta</span>
+                    </button>
+                </nav>
+
+                <button id="logoutButton" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Sair
+                </button>
+            </aside>
+
+            <!-- Main content area -->
+            <div class="profile-main-content">
+                <!-- Personal Information -->
+                <section class="info-card">
+                    <h3 class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Minhas Informações
+                    </h3>
+                    
+                    <div class="info-item">
+                        <label for="hairTypeSelect">Tipo de Cabelo</label>
+                        <select id="hairTypeSelect" disabled>
+                            <option value="">Ainda não preenchido</option>
+                            <option value="liso">Liso (1A, 1B, 1C)</option>
+                            <option value="ondulado">Ondulado (2A, 2B, 2C)</option>
+                            <option value="cacheado">Cacheado (3A, 3B, 3C)</option>
+                            <option value="crespo">Crespo (4A, 4B, 4C)</option>
+                        </select>
+                        <button id="completeQuizButton" class="btn-secondary">
+                            <i class="fas fa-clipboard-list"></i>
+                            Fazer/Refazer o Quiz
+                        </button>
+                    </div>
+                    
+                    <div class="info-item">
+                        <label>Rotina Capilar Personalizada</label>
+                        <div id="hairRoutine" class="routine-box">
+                            Sua rotina capilar aparecerá aqui após você completar um quiz.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quiz History -->
+                <section class="info-card">
+                    <h3 class="section-title">
+                        <i class="fas fa-clock-rotate-left"></i>
+                        Histórico de Quizzes
+                    </h3>
+                    <ul id="quizHistoryList" class="quiz-history-list">
+                        <li class="no-history-message">Nenhum quiz realizado ainda.</li>
+                    </ul>
+                    <button id="viewAllQuizzesButton" class="btn-tertiary">
+                        Ver Todos os Quizzes
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mawira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth-nav.js"></script>
+    <script src="perfil.js"></script>
+</body>
+</html>

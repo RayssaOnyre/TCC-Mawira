@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Mawira</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html" id="logoMawira">Mawira</a></h1>
+            <nav class="nav">
+                <button class="hamburger-menu" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                    <li id="authLinkContainer"></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container blog-page-content">
+        <section id="blogPostListSection" class="blog-posts">
+            <h2>Artigos Recentes</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Pesquisar posts...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="post-list">
+                </div>
+        </section>
+
+        <section id="singlePostSection" class="single-post-view" style="display: none;">
+            <button id="backToBlogListButton" class="btn btn-secondary back-button">
+                <i class="fas fa-arrow-left"></i> Voltar ao Blog
+            </button>
+            <article class="post-full">
+                <img id="singlePostImage" src="" alt="Imagem de destaque do post" class="post-full-image">
+                <h1 id="singlePostTitle"></h1>
+                <p id="singlePostMeta" class="post-meta"></p>
+                <div id="singlePostContent" class="post-full-content">
+                    </div>
+
+                <div class="comments-section">
+                    <h3>Avaliações e Comentários</h3>
+
+                    <div class="ratings-summary">
+                        <h4>Média de Avaliações: <span id="averageRatingDisplay">0.0</span> <i class="fas fa-star filled"></i> (<span id="totalReviewsCount">0</span> avaliações)</h4>
+                        <div id="starRatingDisplay" class="star-rating-display">
+                            </div>
+                    </div>
+
+                    <div class="comment-form-container">
+                        <h4>Deixe seu Comentário e Avaliação:</h4>
+                        <form id="commentForm" class="comment-form">
+                            <div class="form-group">
+                                <label for="commentName">Seu Nome:</label>
+                                <input type="text" id="commentName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="commentRating">Sua Avaliação:</label>
+                                <div id="commentRatingStars" class="star-rating editable">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="commentText">Seu Comentário:</label>
+                                <textarea id="commentText" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Comentário</button>
+                        </form>
+                    </div>
+
+                    <div class="comments-list-container">
+                        <h4>Comentários Recentes:</h4>
+                        <ul id="commentsList" class="comments-list">
+                            <li class="no-comments-message" style="display: none;">Nenhum comentário ainda. Seja o primeiro a comentar!</li>
+                            </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Filtrar por Categoria</h3>
+            <ul class="categories">
+                <li><a href="#" data-category="all" class="active">Todas</a></li>
+                <li><a href="#" data-category="cuidados">Cuidados</a></li>
+                <li><a href="#" data-category="receitas-caseiras">Receitas Caseiras</a></li>
+                <li><a href="#" data-category="transicao-capilar">Transição Capilar</a></li>
+                <li><a href="#" data-category="problemas-capilares">Problemas Capilares</a></li>
+                <li><a href="#" data-category="tendencias">Tendências</a></li>
+                <li><a href="#" data-category="dicas-gerais">Dicas Gerais</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mawira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth-nav.js"></script> 
+    <script src="blog.js"></script>
+</body>
+</html>

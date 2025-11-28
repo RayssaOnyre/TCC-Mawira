@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Mawira</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html" id="logoMawira">Mawira</a></h1>
+            <nav class="nav">
+                <button class="hamburger-menu" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html" class="active">Contato</a></li>
+                    <li><a href="login.html" class="btn btn-login">Fazer Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container contact-content">
+        <section class="contact-form-section">
+            <h2>Fale Conosco</h2>
+            <p>Envie-nos uma mensagem e retornaremos o mais breve possível.</p>
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Assunto:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="7" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+            </form>
+        </section>
+
+        <section class="contact-info-section">
+            <h2>Informações de Contato</h2>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <p>E-mail: <a href="mailto:contato@mawira.com.br">contato@mawira.com.br</a></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <p>Horário de Atendimento: Segunda a Sexta, das 9h às 18h</p>
+            </div>
+
+            <div class="social-media">
+                <h3>Siga a Mawira</h3>
+                <a href="https://www.instagram.com/mawira" target="_blank" aria-label="Instagram da Mawira"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/mawira" target="_blank" aria-label="Facebook da Mawira"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.pinterest.com/mawira" target="_blank" aria-label="Pinterest da Mawira"><i class="fab fa-pinterest-p"></i></a>
+                <a href="https://www.tiktok.com/@mawira" target="_blank" aria-label="TikTok da Mawira"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mawira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

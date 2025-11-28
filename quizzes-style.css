@@ -1,0 +1,314 @@
+/* Estilos específicos para a página de Quizzes */
+
+.quizzes-page {
+    padding-top: var(--header-height); /* Espaçamento do header fixo */
+    padding-bottom: 50px;
+    background-color: var(--background-color);
+    min-height: calc(100vh - var(--header-height) - 70px); /* Ajusta a altura da tela */
+}
+
+.quiz-section {
+    display: none; /* Oculta todas as seções de quiz por padrão */
+    padding: 30px 0;
+}
+
+.quiz-section.active {
+    display: block; /* Mostra a seção ativa */
+}
+
+/* Estilos da Listagem de Quizzes */
+#quiz-list-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#quiz-list-section p {
+    font-size: 1.1rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.quiz-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.quiz-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-card h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.quiz-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço restante */
+    margin-bottom: 20px;
+}
+
+.quiz-card .btn {
+    margin-top: auto; /* Empurra o botão para o final do card */
+    padding: 10px 20px;
+    font-size: 0.95rem;
+}
+
+/* Estilos da Interface do Quiz */
+#quiz-interface-section {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#current-quiz-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.quiz-progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    transition: width 0.5s ease-out;
+}
+
+.progress-text {
+    text-align: right;
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.quiz-question-container {
+    margin-bottom: 40px;
+}
+
+#question-text {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Colunas para as opções */
+    gap: 15px;
+}
+
+.option-button {
+    background-color: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.option-button:hover {
+    border-color: var(--primary-color);
+    background-color: #f0f0f0;
+}
+
+.option-button.selected {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.quiz-navigation .btn {
+    flex: 1; /* Faz os botões ocuparem o mesmo espaço */
+    padding: 12px 25px;
+    font-size: 1rem;
+}
+
+.quiz-navigation .btn-secondary {
+    background-color: #ccc;
+    color: var(--text-color);
+}
+
+.quiz-navigation .btn-secondary:hover {
+    background-color: #bbb;
+}
+
+/* Estilos do Resultado do Quiz */
+#quiz-result-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.result-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#result-title {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+#result-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+#result-content strong {
+    color: var(--primary-color);
+}
+
+.result-actions {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha */
+    justify-content: center;
+    gap: 15px;
+}
+
+.result-actions .btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-text {
+    background: none;
+    color: var(--primary-color);
+    border: none;
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-text:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #quiz-list-section h2 {
+        font-size: 2rem;
+    }
+
+    .quiz-card {
+        padding: 20px;
+    }
+
+    .quiz-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .quiz-card p {
+        font-size: 0.95rem;
+    }
+
+    #quiz-interface-section {
+        padding: 20px;
+        margin: 0 15px;
+    }
+
+    #current-quiz-title {
+        font-size: 1.8rem;
+    }
+
+    #question-text {
+        font-size: 1.5rem;
+    }
+
+    .option-button {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+
+    .quiz-navigation {
+        flex-direction: column;
+    }
+
+    #quiz-result-section {
+        padding: 0 15px;
+    }
+
+    .result-card {
+        padding: 25px;
+    }
+
+    #result-title {
+        font-size: 2.2rem;
+    }
+
+    #result-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-cards-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+
+    #question-text {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,136 @@
+/* Estilos específicos para a página de Contato */
+.contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Coluna do formulário maior, coluna de informações menor */
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.contact-form-section h2,
+.contact-info-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-form p {
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Botão de Enviar com cor marrom */
+.btn-primary {
+    background-color: #8B4513; /* Marrom */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-decoration: none; /* Caso seja usado em <a> */
+}
+
+.btn-primary:hover {
+    background-color: #A0522D; /* Um tom mais claro de marrom no hover */
+}
+
+.contact-info-section {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    /* --- Adicione ou ajuste esta linha --- */
+    margin-top: 40px; /* Adiciona um espaço de 40px no topo */
+    /* ------------------------------------- */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.info-item i {
+    font-size: 1.5em;
+    color: #8B4513; /* Ícones marrons */
+    margin-right: 15px;
+}
+
+.info-item p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.info-item a {
+    color: #8B4513; /* Links marrons */
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.social-media h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.social-media a {
+    font-size: 2em;
+    color: #8B4513; /* Ícones de redes sociais marrons */
+    margin: 0 12px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #A0522D; /* Um tom mais claro de marrom no hover */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr; /* Uma única coluna em telas menores */
+        gap: 30px;
+    }
+
+    .contact-info-section {
+        /* Em telas menores, a margin-top pode não ser necessária ou pode ser diferente */
+        margin-top: 30px; /* Ajuste para não ter muito espaço em mobile */
+    }
+}
